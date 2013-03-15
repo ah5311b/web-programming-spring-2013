@@ -1,0 +1,13 @@
+@charset "utf-8";
+/* CSS Document */
+
+.row {font-weight: bold;}
+
+table {margin: 25px 0 40px 10px;}
+th, td {border: 1px solid black;
+	text-align: center;
+	padding: 7.5px;
+}
+
+th {background-color: #DDD;}
+/*td {background-color: #EEE;}*/

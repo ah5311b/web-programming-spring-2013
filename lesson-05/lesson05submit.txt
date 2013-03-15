@@ -1,0 +1,4 @@
+URL of page:
+http://student.santarosa.edu/~shossain/GitHub/web-programming-spring-2013/lesson-05/contact-us-start/index.html
+
+Comment: Contact Form for Joe Green Yard Maintenance site, with 1) additional form input fields to capture information via source code file; 2) modifications to Javascript files (a. send-contact.js and b. waves.js) to account for information potentially acquired through completion of new input fields as well as original ones, and modification to appearance of canvas element; and 3) modifications to send-contact.php to send e-mail to my own address.

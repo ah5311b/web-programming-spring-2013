@@ -19,7 +19,10 @@
     </tr>
 
 <?php 
-require('connection.php');
+$db = new mysqli("localhost","shossain_admin","LQVFCOHA","shossain");
+if ($db->connect_errno) {
+    die('Unable to connect to database [' . $db->connect_error . ']');
+}
 
 $sql = <<<SQL
 SELECT artist, track, genre
@@ -38,7 +41,7 @@ while($row = $result->fetch_assoc()){?>
 
 <tr><td class="span2"><?php echo $row['genre']; ?></td>
 <td><?php echo $row['artist']; ?></td>    
-<td><?php echo $row['track']; ?></td></tr>
+<td><?php echo $row['track']; ?></td>
 
 <?php
 }
