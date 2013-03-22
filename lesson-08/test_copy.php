@@ -13,17 +13,21 @@
 
 <table>
   <tr>
-    <th scope="col"><h4>Track</h4></th>
+    <th scope="col"><h4>Genre</h4></th>
     <th scope="col"><h4>Artist</h4></th>
+    <th scope="col"><h4>Track</h4></th>
     </tr>
 
 <?php 
 require('connection.php');
 
 $sql = <<<SQL
-SELECT track, artist
-FROM tracks, albums, artists
-WHERE ((albums.idalbums = tracks.albums_idalbums) and (artists.idartists = albums.artists_idartists))
+SELECT artist, track, genre
+FROM  genres, artists, albums, tracks
+WHERE ((genres.idgenres = artists.genres_idgenres) and 
+(artists.idartists = albums.artists_idartists) and 
+(albums.idalbums = tracks.albums_idalbums)) and 
+genres.idgenres in (1,2,3,4)  
 SQL;
 
 if(!$result = $db->query($sql)){
@@ -32,10 +36,9 @@ if(!$result = $db->query($sql)){
 
 while($row = $result->fetch_assoc()){?>
 
-<tr>
-<td><?php echo $row['track']; ?></td>
-<td><?php echo $row['artist']; ?></td>
-</tr>
+<tr><td class="span2"><?php echo $row['genre']; ?></td>
+<td><?php echo $row['artist']; ?></td>    
+<td><?php echo $row['track']; ?></td></tr>
 
 <?php
 }
